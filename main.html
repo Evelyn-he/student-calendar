@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <style>
+        .taskBarCont{
+            height:100%;
+            width:10%;
+            background-color:grey;
+            float:left;
+        }
+
+        .calendarCont{
+            height:100%;
+            width:40%;
+            background-color:red;
+            float:left;
+        }
+
+        .taskListCont{
+            height:100%;
+            width:50%;
+            background-color:blue;
+            float:right;
+        }
+    </style>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <p>Test1</p>
+    <div class = "mainContainer" style = "position:absolute; width:100%; height:100%">
+        <div class="taskBarCont"></div>
+        <div class="calendarCont">
+            <div>Today's Schedule</div>
+        </div>
+        <div class="taskListCont">
+            <div>To-Do</div>
+        </div>
+    </div>
 </body>
 </html>
