@@ -10,6 +10,9 @@
             --peach:#ed7966;
             --blue:#303179;
             --navy:#141850;
+
+            --font1: Helvetica;
+            --font2: 'Open Sans';
         }
 
        body{
@@ -32,7 +35,7 @@
             
             padding:1.5%;
             padding-right:0;
-            background-color:var(--peach);
+            background-color:var(--blue);
             float:left;
         }
 
@@ -42,21 +45,30 @@
             box-sizing: border-box;
 
             padding: 1.5%;
-            background-color:var(--peach);
+            background-color:var(--blue);
             float:right;
         }
 
         .dateDisplay{
             width:100%;
-            height:7%;
-            margin-bottom:1%;
+            height:5%;
+            display:grid;
+            gap:0;
+
+            grid-template-columns: 6.2% 13.4% 13.4% 13.4% 13.4% 13.4% 13.4% 13.4%;
+            grid-template-rows: 100%;
             background-color:var(--beige);
         }
 
         .calendarDisplay{
             width:100%;
-            height:92%;
+            height:95%;
             background-color:var(--white);
+            display: grid;
+            gap:0;
+            grid-template-columns: 6.2% 13.4% 13.4% 13.4% 13.4% 13.4% 13.4% 13.4%;
+            grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+            overflow-y:scroll;
         }
 
         .toDoToday{
@@ -84,6 +96,41 @@
             background-color:var(--blue);
         }
 
+        .timeLabel{
+            border-bottom: 1px solid var(--peach);
+            border-right: 1px solid var(--peach);
+            box-sizing:border-box;
+            text-align: right;
+            font-size:0.75vw;
+            padding:5%;
+            font-family:var(--font1);
+            color:var(--navy);
+            background-color:var(--beige);
+        }
+
+        .dateLabel{
+            border-bottom: 1px solid var(--peach);
+            border-right: 1px solid var(--peach);
+            box-sizing:border-box;
+            text-align: center;
+            font-size:clamp(15px,1vw,30px);
+            padding-top:2.5%;
+            font-family:var(--font1);
+            color:var(--navy);
+            background-color:var(--beige);
+        }
+
+        .calendarDisplay::-webkit-scrollbar{
+            display: none;
+        }
+
+        .timeSegment{
+            width:100%;
+            height:100%;
+            border-bottom:1px solid var(--peach);
+            border-right:1px solid var(--peach);
+            box-sizing:border-box;
+        }
 
     </style>
 
@@ -96,15 +143,165 @@
     <div class = "mainContainer" style = "position:absolute; width:100%; height:100%;">
         <div class="taskBarCont">
             <button class = "taskBarBtn"><img src="Images/homeIconWhite.png" style="width:60%"></button>
+            <button class = "taskBarBtn"><img src="Images/calendar.png" style = "width:55%"></button>
+            <button class = "taskBarBtn"><img src="Images/addClass.png" style = "width:60%"></button>
         </div>
         <div class="calendarCont">
-            <div class = "dateDisplay">Today's Date</div>
-            <div class = "calendarDisplay">Calendar</div>
+            <div class = "dateDisplay">
+                <div class="dateLabel"style="grid-column-start: 1;grid-column-end: 2; background-color:var(--peach);"></div>
+                <div class="dateLabel" style="grid-column-start: 2;grid-column-end: 3;">Monday</div>
+                <div class="dateLabel" style="grid-column-start: 3;grid-column-end: 4;">Tuesday</div>
+                <div class="dateLabel" style="grid-column-start: 4;grid-column-end: 5;">Wednesday</div>
+                <div class="dateLabel" style="grid-column-start: 5;grid-column-end: 6;">Thursday</div>
+                <div class="dateLabel" style="grid-column-start: 6;grid-column-end: 7;">Friday</div>
+                <div class="dateLabel" style="grid-column-start: 7;grid-column-end: 8;">Saturday</div>
+                <div class="dateLabel" style="grid-column-start: 8;grid-column-end: 9;">Sunday</div>
+            </div>
+            <div class = "calendarDisplay">
+
+                <div class="timeLabel" style="grid-row-start: 1; grid-row-end:2;">8:00 AM</div>
+                <div class="timeLabel" style="grid-row-start: 2; grid-row-end:3;">9:00 AM</div>
+                <div class="timeLabel" style="grid-row-start: 3; grid-row-end:4;">10:00 AM</div>
+                <div class="timeLabel" style="grid-row-start: 4; grid-row-end:5;">11:00 AM</div>
+                <div class="timeLabel" style="grid-row-start: 5; grid-row-end:6;">12:00 AM</div>
+                <div class="timeLabel" style="grid-row-start: 6; grid-row-end:7;">1:00 PM</div>
+                <div class="timeLabel" style="grid-row-start: 7; grid-row-end:8;">2:00 PM</div>
+                <div class="timeLabel" style="grid-row-start: 8; grid-row-end:9;">3:00 PM</div>
+                <div class="timeLabel" style="grid-row-start: 9; grid-row-end:10;">4:00 PM</div>
+                <div class="timeLabel" style="grid-row-start: 10; grid-row-end:11;">5:00 PM</div>
+                <div class="timeLabel" style="grid-row-start: 11; grid-row-end:12;">6:00 PM</div>
+                <div class="timeLabel" style="grid-row-start: 12; grid-row-end:13;">7:00 PM</div>
+                <div class="timeLabel" style="grid-row-start: 13; grid-row-end:14;">8:00 PM</div>
+                <div class="timeLabel" style="grid-row-start: 14; grid-row-end:15;">9:00 PM</div>
+                <div class="timeLabel" style="grid-row-start: 15; grid-row-end:16;">10:00 PM</div>
+                <div class="timeLabel" style="grid-row-start: 16; grid-row-end:17;">11:00 PM</div>
+
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                <div class="timeSegment"></div>
+                
+                
+
+            </div>
         </div>
         <div class="taskListCont">
             <div class ="toDoToday">To Do Today</div>
             <div class = "toDo">To Do</div>
         </div>
     </div>
+
+
+//    <script src="js/calendar.js"></script>
 </body>
 </html>
+
+<!-- https://www.iconsdb.com/black-icons/black-calendar-icons.html -->
