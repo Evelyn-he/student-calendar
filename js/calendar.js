@@ -1,14 +1,13 @@
-// function createCalendar() {
+const timeSegs = document.querySelector(".timeSegment");
+const newEvent = document.createElement("div");
 
-//     for (var i = 0; i <= 16; i++) {
-//         for (var j = 1; j <= 7; j++) {
-//             var div = document.createElement("div");
-//             div.style.width="100%";
-//             div.style.length="100%";
-//             div.style.background="red";
-//             document.getElementById("calendar").appendChild(div);
-//         }
-//         var jump=document.createElement("br");
-//         document.getElementById("calendar").appendChild(jump);
-//     }
-// }
+
+
+
+timeSegs.addEventListener('mousedown', e => {
+    console.log(e);
+    newEvent.style.width="10px";
+    newEvent.style.height="10px";
+    newEvent.style.backgroundColor="red";
+    timeSegs.appendChild(newEvent);
+});

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+        :root {
+            --white: #fae5df;
+            --beige: #f5cac2;
+            --peach: #ed7966;
+            --blue: #303179;
+            --navy: #141850;
+
+            --font1: Helvetica;
+            --font2: 'Open Sans';
+        }
+
+        body {
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+
+        .taskBarCont {
+            height: 100%;
+            width: 5%;
+            background-color: var(--navy);
+            float: left;
+        }
+
+        .taskBarBtn {
+            width: 100%;
+            height: 5vw;
+            padding: 0;
+            border: 0;
+            background-color: var(--navy);
+        }
+
+        .taskBarBtn:hover {
+            background-color: var(--blue);
+        } 
+
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mainContainer" style="position:absolute; width:100%; height:100%;">
+        <div class="taskBarCont">
+            <button class="taskBarBtn"><img src="Images/homeIconWhite.png" style="width:60%"></button>
+            <button class="taskBarBtn" onclick="location.href='main.html'"><img src="Images/calendar.png"
+                    style="width:55%"></button>
+            <button class="taskBarBtn" onclick="location.href='newClass.html'"><img src="Images/addClass.png"
+                    style="width:60%"></button>
+        </div>
+    </div>
+</body>
+
+</html>

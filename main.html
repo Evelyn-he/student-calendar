@@ -1,137 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <style>
-
-        :root{
-            --white:#fae5df;
-            --beige:#f5cac2;
-            --peach:#ed7966;
-            --blue:#303179;
-            --navy:#141850;
+        :root {
+            --white: #fae5df;
+            --beige: #f5cac2;
+            --peach: #ed7966;
+            --blue: #303179;
+            --navy: #141850;
 
             --font1: Helvetica;
             --font2: 'Open Sans';
         }
 
-       body{
-           margin:0;
-           border:0;
-           padding:0;
-       }
-
-        .taskBarCont{
-            height:100%;
-            width:5%;
-            background-color:var(--navy);
-            float:left;
+        body {
+            margin: 0;
+            border: 0;
+            padding: 0;
         }
 
-        .calendarCont{
-            height:100%;
-            width:70%;
-            box-sizing:border-box;
-            
-            padding:1.5%;
-            padding-right:0;
-            background-color:var(--blue);
-            float:left;
+        .taskBarCont {
+            height: 100%;
+            width: 5%;
+            background-color: var(--navy);
+            float: left;
         }
 
-        .taskListCont{
-            height:100%;
-            width:25%;
+        .calendarCont {
+            height: 100%;
+            width: 70%;
             box-sizing: border-box;
 
             padding: 1.5%;
-            background-color:var(--blue);
-            float:right;
+            padding-right: 0;
+            background-color: var(--blue);
+            float: left;
         }
 
-        .dateDisplay{
-            width:100%;
-            height:5%;
-            display:grid;
-            gap:0;
+        .taskListCont {
+            height: 100%;
+            width: 25%;
+            box-sizing: border-box;
+
+            padding: 1.5%;
+            background-color: var(--blue);
+            float: right;
+        }
+
+        .dateDisplay {
+            width: 100%;
+            height: 5%;
+            display: grid;
+            gap: 0;
 
             grid-template-columns: 6.2% 13.4% 13.4% 13.4% 13.4% 13.4% 13.4% 13.4%;
             grid-template-rows: 100%;
-            background-color:var(--beige);
-        }
-
-        .calendarDisplay{
-            width:100%;
-            height:95%;
-            background-color:var(--white);
-            display: grid;
-            gap:0;
-            grid-template-columns: 6.2% 13.4% 13.4% 13.4% 13.4% 13.4% 13.4% 13.4%;
-            grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-            overflow-y:scroll;
-        }
-
-        .toDoToday{
-            width:100%;
-            height:35%;
-            background-color:var(--beige);
-            margin-bottom:5%;
-        }
-
-        .toDo{
-            width:100%;
-            height:63%;
             background-color: var(--beige);
         }
 
-        .taskBarBtn{
-            width:100%;
-            height:5vw;
-            padding:0;
-            border:0;
-            background-color:var(--navy);
+        .calendarDisplay {
+            width: 100%;
+            height: 95%;
+            background-color: var(--white);
+            display: grid;
+            gap: 0;
+            grid-template-columns: 6.2% 13.4% 13.4% 13.4% 13.4% 13.4% 13.4% 13.4%;
+            grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+            overflow-y: scroll;
         }
 
-        .taskBarBtn:hover{
-            background-color:var(--blue);
+        .toDoToday {
+            width: 100%;
+            height: 35%;
+            background-color: var(--beige);
+            margin-bottom: 5%;
         }
 
-        .timeLabel{
-            border-bottom: 1px solid var(--peach);
+        .toDo {
+            width: 100%;
+            height: 63%;
+            background-color: var(--beige);
+        }
+
+        .taskBarBtn {
+            width: 100%;
+            height: 5vw;
+            padding: 0;
+            border: 0;
+            background-color: var(--navy);
+        }
+
+        .taskBarBtn:hover {
+            background-color: var(--blue);
+        }
+
+        .timeLabel {
+            border-bottom: 2px solid var(--peach);
             border-right: 1px solid var(--peach);
-            box-sizing:border-box;
+            box-sizing: border-box;
             text-align: right;
-            font-size:0.75vw;
-            padding:5%;
-            font-family:var(--font1);
-            color:var(--navy);
-            background-color:var(--beige);
+            font-size: 0.75vw;
+            padding: 5%;
+            font-family: var(--font1);
+            color: var(--navy);
+            background-color: var(--beige);
         }
 
-        .dateLabel{
+        .dateLabel {
             border-bottom: 1px solid var(--peach);
-            border-right: 1px solid var(--peach);
-            box-sizing:border-box;
+            border-right: 2px solid var(--peach);
+            box-sizing: border-box;
             text-align: center;
-            font-size:clamp(15px,1vw,30px);
-            padding-top:2.5%;
-            font-family:var(--font1);
-            color:var(--navy);
-            background-color:var(--beige);
+            font-size: clamp(15px, 1vw, 30px);
+            padding-top: 2.5%;
+            font-family: var(--font1);
+            color: var(--navy);
+            background-color: var(--beige);
         }
 
-        .calendarDisplay::-webkit-scrollbar{
+        .calendarDisplay::-webkit-scrollbar {
             display: none;
         }
 
-        .timeSegment{
+        /* .timeSegment{
             width:100%;
             height:100%;
             border-bottom:1px solid var(--peach);
             border-right:1px solid var(--peach);
             box-sizing:border-box;
-        }
-
+        } */
     </style>
 
     <meta charset="UTF-8">
@@ -139,16 +138,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <div class = "mainContainer" style = "position:absolute; width:100%; height:100%;">
+    <div class="mainContainer" style="position:absolute; width:100%; height:100%;">
         <div class="taskBarCont">
-            <button class = "taskBarBtn"><img src="Images/homeIconWhite.png" style="width:60%"></button>
-            <button class = "taskBarBtn"><img src="Images/calendar.png" style = "width:55%"></button>
-            <button class = "taskBarBtn"><img src="Images/addClass.png" style = "width:60%"></button>
+            <button class="taskBarBtn"><img src="Images/homeIconWhite.png" style="width:60%"></button>
+            <button class="taskBarBtn" onclick="location.href='main.html'"><img src="Images/calendar.png"
+                    style="width:55%"></button>
+            <button class="taskBarBtn" onclick="location.href='newClass.html'"><img src="Images/addClass.png"
+                    style="width:60%"></button>
         </div>
         <div class="calendarCont">
-            <div class = "dateDisplay">
-                <div class="dateLabel"style="grid-column-start: 1;grid-column-end: 2; background-color:var(--peach);"></div>
+            <div class="dateDisplay">
+                <div class="dateLabel" style="grid-column-start: 1;grid-column-end: 2; background-color:var(--peach);">
+                </div>
                 <div class="dateLabel" style="grid-column-start: 2;grid-column-end: 3;">Monday</div>
                 <div class="dateLabel" style="grid-column-start: 3;grid-column-end: 4;">Tuesday</div>
                 <div class="dateLabel" style="grid-column-start: 4;grid-column-end: 5;">Wednesday</div>
@@ -157,7 +160,7 @@
                 <div class="dateLabel" style="grid-column-start: 7;grid-column-end: 8;">Saturday</div>
                 <div class="dateLabel" style="grid-column-start: 8;grid-column-end: 9;">Sunday</div>
             </div>
-            <div class = "calendarDisplay">
+            <div class="calendarDisplay" id="calendarDisplay">
 
                 <div class="timeLabel" style="grid-row-start: 1; grid-row-end:2;">8:00 AM</div>
                 <div class="timeLabel" style="grid-row-start: 2; grid-row-end:3;">9:00 AM</div>
@@ -176,132 +179,42 @@
                 <div class="timeLabel" style="grid-row-start: 15; grid-row-end:16;">10:00 PM</div>
                 <div class="timeLabel" style="grid-row-start: 16; grid-row-end:17;">11:00 PM</div>
 
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                <div class="timeSegment"></div>
-                
-                
+
+                <script>
+                    const container = document.getElementById('calendarDisplay');
+
+                    for (let i = 0; i < 16; i++) {
+                        for (let j = 1; j < 8; j++) {
+                            const timeSegment = document.createElement("div");
+                            timeSegment.style.gridRowStart = i + 1 + 'px';
+                            timeSegment.style.gridRowEnd = i + 2 + 'px';
+                            timeSegment.style.gridColStart = j + 2 + 'px';
+                            timeSegment.style.gridColEnd = j + 3 + 'px';
+                            timeSegment.style.width = "100%";
+                            timeSegment.style.height = "100%";
+                            timeSegment.style.borderBottomWidth = "1px";
+                            timeSegment.style.borderRightWidth = "1px";
+                            timeSegment.style.borderBottomStyle = "solid";
+                            timeSegment.style.borderRightStyle = "solid";
+                            timeSegment.style.boxSizing = "border-box";
+                            timeSegment.style.borderColor = "var(--peach)";
+                            container.appendChild(timeSegment);
+                        }
+                    }
+                </script>
 
             </div>
         </div>
         <div class="taskListCont">
-            <div class ="toDoToday">To Do Today</div>
-            <div class = "toDo">To Do</div>
+            <div class="toDoToday">To Do Today</div>
+            <div class="toDo">To Do</div>
         </div>
     </div>
 
 
-//    <script src="js/calendar.js"></script>
+    <script src="js/calendar.js"></script>
 </body>
+
 </html>
 
 <!-- https://www.iconsdb.com/black-icons/black-calendar-icons.html -->
